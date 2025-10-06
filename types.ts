@@ -116,6 +116,5 @@ export function isCaseStudy(obj: CosmicObject): obj is CaseStudy {
   return obj.type === 'case-studies';
 }
 
-// Utility types for common patterns
-export type OptionalMetadata<T> = Partial<T['metadata']>;
+// Utility type for creating new objects (without system-generated fields)
 export type CreateServiceData = Omit<Service, 'id' | 'created_at' | 'modified_at'>;
