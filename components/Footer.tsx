@@ -10,9 +10,9 @@ export default function Footer() {
       { name: 'Digital Marketing', href: '/services' },
     ],
     company: [
-      { name: 'About Us', href: '#team' },
+      { name: 'About Us', href: '/about' },
       { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Contact', href: '#contact' },
+      { name: 'Contact', href: '/contact' },
     ],
     social: [
       {

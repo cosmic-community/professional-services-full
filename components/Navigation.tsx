@@ -10,8 +10,8 @@ export default function Navigation() {
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'About', href: '#team' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ]
 
   return (
@@ -40,7 +40,7 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
-              href="#contact"
+              href="/contact"
               className="btn btn-primary"
             >
               Get Started
@@ -81,7 +81,7 @@ export default function Navigation() {
               ))}
               <div className="pt-4">
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="btn btn-primary w-full"
                   onClick={() => setIsMenuOpen(false)}
                 >
