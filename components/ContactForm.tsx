@@ -37,8 +37,20 @@ export default function ContactForm() {
     setSubmitMessage('')
 
     try {
-      // Simulate form submission - replace with actual form handling
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      // Send form data to API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
       
       setSubmitMessage('Thank you for your message! We\'ll get back to you within 24 hours.')
       setFormData({
@@ -50,6 +62,7 @@ export default function ContactForm() {
         message: ''
       })
     } catch (error) {
+      console.error('Contact form error:', error)
       setSubmitMessage('There was an error sending your message. Please try again.')
     } finally {
       setIsSubmitting(false)
